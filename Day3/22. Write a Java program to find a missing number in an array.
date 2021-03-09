@@ -1,0 +1,28 @@
+//22. Write a Java program to find a missing number in an array.
+import java.util.Scanner;
+
+public class Missing {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		System.out.println("Enter the element of array");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		System.out.println("Enter the last element of series");
+		int last=sc.nextInt();
+		int series=(last*(last+1))/2;
+		int sum=0;
+		for(int i=0;i<size;i++)
+		{
+			sum=sum+array1[i];
+		}
+		System.out.println("Missing Number"+(series-sum));
+
+	}
+
+}
