@@ -1,0 +1,29 @@
+//24. Write a Java program to move all 0's to the end of an array. Maintain the relative order of the other (non-zero) array elements.
+import java.util.Scanner;
+
+public class Move0 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		System.out.println("Enter the element of array");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		String str1="";
+		String str2="";
+		for(int i=0;i<array1.length;i++) {
+			if (array1[i]==0) {
+				str2+=array1[i]+" ";
+			}
+			else {
+				str1+=array1[i]+" ";
+			}
+		}
+		System.out.println(str1+str2);
+	}
+
+}
