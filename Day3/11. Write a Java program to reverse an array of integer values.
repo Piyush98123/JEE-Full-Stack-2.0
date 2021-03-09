@@ -1,0 +1,36 @@
+//11. Write a Java program to reverse an array of integer values.
+import java.util.Scanner;
+
+public class Reverse {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		System.out.println("Enter the element of array1");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		for(int i=0;i<size;i++)
+		{
+			for(int j=i+1;j<array1.length;j++)
+			{
+				int temp=0;
+				if (array1[i]>array1[j]) {
+					temp=array1[i];
+					array1[i]=array1[j];
+					array1[j]=temp;
+				}
+			}
+		}
+		
+		for(int i=array1.length-1;i>=0;i--)
+		{
+			System.out.print(array1[i]+" ");
+		}
+
+	}
+
+}
