@@ -1,0 +1,41 @@
+//8. Write a Java program to copy an array by iterating the array.
+import java.util.*;
+public class Copy {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		int array2[]=new int[size];
+		System.out.println("Enter the element of first array");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		System.out.println("Sorting the Array1");
+		for(int i=0;i<size;i++)
+		{
+			for(int j=i+1;j<array1.length;j++)
+			{
+				int temp=0;
+				if (array1[i]>array1[j]) {
+					temp=array1[i];
+					array1[i]=array1[j];
+					array1[j]=temp;
+				}
+			}
+		}
+		System.out.println("Copying the Sorted Array1 into Array2");
+		for(int i=0;i<array1.length;i++)
+		{
+			array2[i]=array1[i];
+		}
+		for(int i=0;i<array2.length;i++)
+		{
+			System.out.println(array2[i]);
+		}
+
+	}
+
+}
