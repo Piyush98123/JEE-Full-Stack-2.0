@@ -1,0 +1,31 @@
+//25. Write a Java program to find the number of even and odd integers in a given array of integers.
+import java.util.Scanner;
+
+public class OddEven {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		System.out.println("Enter the element of Array1:");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		String str1="";
+		String str2="";
+		for(int i=0;i<array1.length;i++) {
+			if (array1[i]%2==0) {
+				str1+=array1[i]+" ";
+			}
+			else {
+				str2+=array1[i]+" ";
+			}
+		}
+		System.out.println("Even Number:"+str1);
+		System.out.println("Odd Number:"+str2);
+
+	}
+
+}
