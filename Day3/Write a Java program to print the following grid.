@@ -1,0 +1,35 @@
+/*3. Write a Java program to print the following grid.
+Expected Output :
+
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -                                                                                           
+- - - - - - - - - -  */
+import java.util.*;
+public class Grid {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the row of matrix:");
+		int row=sc.nextInt();
+		System.out.println("Enter the column of matrix:");
+		int col=sc.nextInt();
+		int arr[][]=new int[row][col];
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				System.out.print("-");
+			}
+			System.out.println();
+		}
+
+	}
+
+}
