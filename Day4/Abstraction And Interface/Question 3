@@ -1,0 +1,54 @@
+//3.We have to calculate the percentage of marks obtained in three subjects (each out of 100) by student A and in four subjects (each out of 100) by student B. Create an abstract class 'Marks' with an abstract method 'getPercentage'. It is inherited by two other classes 'A' and 'B' each having a method with the same name which returns the percentage of the students. The constructor of student A takes the marks in three subjects as its parameters and the marks in four subjects as its parameters for student B. Create an object for eac of the two classes and print the percentage of marks for both the students.
+package capgeminiPractice;
+import java.util.*;
+abstract class Marks{
+	public abstract double getPercentage();
+}
+class ClassA extends Marks{
+	double s1,s2,s3;
+	public ClassA(double mark1,double mark2,double mark3) {
+		this.s1=mark1;
+		this.s2=mark2;
+		this.s3=mark3;
+	}
+	public double getPercentage() {
+		double total=(s1+s2+s3)/3;
+		return total;
+	}
+}
+
+class ClassB extends Marks{
+	double s1,s2,s3,s4;
+	public ClassB(double mark1,double mark2,double mark3,double mark4) {
+		this.s1=mark1;
+		this.s2=mark2;
+		this.s3=mark3;
+		this.s4=mark4;
+	}
+	public double getPercentage() {
+		double total=(s1+s2+s3+s4)/4;
+		return total;
+	}
+}
+
+public class Percentage {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the marks of Student 1 in 3 subjects");
+	double s1=sc.nextDouble();
+	double s2=sc.nextDouble();
+	double s3=sc.nextDouble();
+	System.out.println("Enter the marks of Student 2 in 4 subjects");
+	double s4=sc.nextDouble();
+	double s5=sc.nextDouble();
+	double s6=sc.nextDouble();
+	double s7=sc.nextDouble();
+	ClassA classA=new ClassA(s1,s2,s3);
+	System.out.println("Percentage of Student 1: "+classA.getPercentage());
+	ClassB classB=new ClassB(s4,s5,s6,s7);
+	System.out.println("Percentage of Student 2: "+classB.getPercentage());
+	
+}
+
+}
