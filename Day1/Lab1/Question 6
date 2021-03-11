@@ -1,0 +1,24 @@
+package LabbookL_1;
+
+public class Difference {
+	public static int calculateDifference(int n)
+	{
+		int sum=0;
+		int square=0;
+		for(int i=1;i<=n;i++)
+		{
+			square=square+i*i;
+		}
+		for(int i=1;i<=10;i++)
+		{
+			sum=sum+i;
+		}
+		return square-sum;
+	}
+
+	public static void main(String[] args) {
+		int result=calculateDifference(10);
+		System.out.println(result);
+	}
+
+}
