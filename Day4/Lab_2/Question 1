@@ -1,0 +1,36 @@
+Exercise 1:-
+package capgeminiPractice;
+import java.util.*;
+import java.util.Arrays;
+class ArraySmallest{
+	int size;
+	int array[];
+	ArraySmallest(int s){
+		this.size=s;
+		array=new int[size];
+	}
+	public void input() {
+		System.out.println("Enter the element of array");
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<size;i++) {
+			array[i]=sc.nextInt();
+		}
+	}
+	public int sorts() {
+		Arrays.sort(array);
+		return array[1];
+	}
+}
+public class Array {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int size=sc.nextInt();
+		ArraySmallest as=new ArraySmallest(size);
+		as.input();
+		System.out.println(as.sorts());
+
+	}
+
+}
