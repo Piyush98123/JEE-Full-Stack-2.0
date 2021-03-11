@@ -1,0 +1,23 @@
+package LabbookL_1;
+
+public class Fibonnaci {
+
+	public static void main(String[] args) 
+	{
+		int nth=5;
+		int a=1,b=1,i=3;
+		while (true)
+		{
+			int c=a+b;
+			a=b;
+			b=c;
+			if (i==nth)
+			{
+				System.out.println(c);
+				break;
+			}
+			i++;
+		}
+	}
+
+}
