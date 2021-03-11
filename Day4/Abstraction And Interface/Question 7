@@ -1,0 +1,67 @@
+//Create an abstract class pen with methods write () and refill () as abstract methods 
+Use the pen class from Q1 to create a concrete class fountain pen with additional method change Nib ()
+Create a class monkey with jump ( ) and bite ( ) methods Create a class human whichinherits this monkey class and implements basicanimal interface with eat ( ) and sleep methods Demonstrate polymorphism using using monkey  class from Q3 
+
+package capgeminiPractice;
+abstract class Pen{
+    abstract void write();
+    abstract void refill();
+}
+
+class FountainPen extends Pen{
+    void write(){
+        System.out.println("Write");
+    }
+    void refill(){
+        System.out.println("Refill");
+    }
+    void changeNib(){
+        System.out.println("Changing the nib");
+    }
+}
+class Monkey{
+    void jump(){
+        System.out.println("Jumping...");
+    }
+    void bite(){
+        System.out.println("Biting...");
+    }
+}
+
+interface BasicAnimal{
+    public void eat();
+    public void sleep();
+}
+
+class Human extends Monkey implements BasicAnimal{
+    @Override
+    public void eat() {
+        System.out.println("Eating");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println("Sleeping");
+    }
+    void speak() {
+    	System.out.println("Speak");
+    }
+}
+public class Result {
+
+	public static void main(String[] args) {
+        FountainPen pen = new FountainPen();
+        pen.changeNib();
+        Human human = new Human();
+        human.sleep();
+        Monkey m1 = new Human();
+        m1.jump();
+        m1.bite();
+        BasicAnimal dog = new Human();
+        dog.eat();
+        dog.sleep();
+
+
+	}
+
+}
