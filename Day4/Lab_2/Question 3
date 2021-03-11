@@ -1,0 +1,46 @@
+Exercise 3:
+package capgeminiPractice;
+import java.util.*;
+class ArrayReverse{
+	public int [] reverse(int a[]) {
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				int temp=0;
+				if (a[i]>a[j]) {
+					temp=a[i];
+					a[i]=a[j];
+					a[j]=temp;
+				}
+			}
+		}
+		return a;
+	}
+	public void print(int a[]) {
+		for(int i=a.length-1;i>=0;i--)
+		{
+			System.out.println(a[i]);
+		}
+	}
+	
+}
+public class Reverse {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size:");
+		int size=sc.nextInt();
+		int array1[]=new int[size];
+		int temp[]=new int[size];
+		System.out.println("Enter the element of array1");
+		for(int i=0;i<array1.length;i++)
+		{
+			array1[i]=sc.nextInt();
+		}
+		ArrayReverse ar=new ArrayReverse();
+		temp=ar.reverse(array1);
+		ar.print(temp);
+	}
+
+}
