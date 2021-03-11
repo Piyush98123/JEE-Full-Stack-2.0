@@ -1,0 +1,39 @@
+Exercise 2:
+package capgeminiPractice;
+import java.util.*;
+import java.util.Arrays;
+class SortString{
+	int size;
+	String arr[];
+	SortString(int s){
+		this.size=s;
+		arr=new String[size];
+	}
+	public void input() {
+	System.out.println("Enter the element of String array");
+	Scanner sc=new Scanner(System.in);
+	for(int i=0;i<size;i++) {
+			arr[i]=sc.nextLine();
+		}
+	}
+	public void sorts() {
+		Arrays.sort(arr);
+		for(int i=0;i<size;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+}
+public class SortStringArray {
+
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the size of string array");
+	int size=sc.nextInt();
+	SortString ss= new SortString(size);
+	ss.input();
+	ss.sorts();
+	
+	
+	}
+
+}
