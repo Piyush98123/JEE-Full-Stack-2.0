@@ -1,0 +1,22 @@
+package LabbookL_1;
+//Exercise 1: Create a method to find the sum of the cubes of the digits of an n digit number
+public class SumOfCubes {
+	
+	public static int cubeSum(int num) {
+		int sum=0;
+		while (num !=0 )
+		{
+			int rem=num%10;
+			sum=sum+(rem*rem*rem);
+			num=num/10;
+		}
+		return sum;
+	}
+	public static void main(String[] args) {
+		
+		int result=cubeSum(512);
+		System.out.println(result);
+
+	}
+
+}
