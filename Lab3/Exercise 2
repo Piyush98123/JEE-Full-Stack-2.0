@@ -1,0 +1,28 @@
+//Create a class containing a method to create the mirror image of a String. The method should return the two Strings separated with a pipe(|) symbol .
+package LabbookL_3;
+import java.util.*;
+class Tokenizer{
+	String s;
+	public Tokenizer(String str) {
+		this.s=str;
+	}
+	public void reverse() {
+		StringBuilder sb=new StringBuilder();
+		sb.append(s);
+		sb.reverse();
+		System.out.println(s+"|"+sb);
+	}
+	
+}
+public class StringToken {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string:");
+		String input=sc.nextLine();
+		Tokenizer token=new Tokenizer(input);
+		token.reverse();
+
+	}
+
+}
