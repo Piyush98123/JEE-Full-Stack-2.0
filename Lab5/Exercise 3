@@ -1,0 +1,33 @@
+//Create an Exception class named as “EmployeeException”(User defined Exception) in a package named as “com.cg.eis.exception” and throw an exception if salary of an employee is below than 3000. Use Exception Handling mechanism to handle exception properly.
+
+package com.cg.eis.exception;
+import java.util.*;
+class SalaryException extends Exception{
+	public SalaryException(String s) {
+		super(s);
+	}
+}
+public class ExceptionEmployee {
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the salary:");
+		int sal=sc.nextInt();
+		try {
+			if (sal<=3000) {
+				throw new SalaryException("Salary Should not be below 3000");
+			}
+			else {
+				System.out.println("Good Keep it up");
+			}
+		}
+		catch (SalaryException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		finally {
+			sc.close();
+		}
+
+	}
+
+}
