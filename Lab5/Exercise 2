@@ -1,0 +1,38 @@
+//Write a Java Program to validate the full name of an employee. Create and throw a user defined exception if firstName and lastName is blank.
+//Write a Java Program to validate the full name of an employee. Create and throw a user defined exception if firstName and lastName is blank.
+
+package LabbookL_5;
+import java.util.*;
+class UserDefined extends Exception{
+	UserDefined(String s){
+		super(s);
+	}
+}
+public class FirstLastName {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Your First Name:");
+		String firstName=sc.nextLine();
+		System.out.println("Enter Your Last Name:");
+		String lastName=sc.nextLine();
+		try {
+			if (firstName.equals("") && lastName.equals("")) {
+				throw new UserDefined("Please Write your First Name and Last name");
+			}
+			else if(firstName.equals(""))
+				throw new UserDefined("Please Write your First Name");
+			else if(lastName.equals(""))
+				throw new UserDefined("Please Write your Last name");
+			else
+				System.out.println("you are good to go");
+		}
+		 catch (UserDefined e) {
+			System.out.println(e.getMessage());
+			}
+		finally {
+			sc.close();
+		}
+
+	}
+}	
+
