@@ -1,0 +1,29 @@
+//:  Validate the age of a person and display proper message by using user defined exception. Age of a person should be above 15.
+package LabbookL_5;
+import java.util.*;
+class UserDefinedAge extends Exception{
+	public UserDefinedAge(String s) {
+		super(s);
+	}
+}
+public class AgeException {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the age:");
+		int age=sc.nextInt();
+		try {
+			if (age<=15) {
+				throw new UserDefinedAge("Not Eligible");
+			}
+			else
+				System.out.println("Eligible");
+		} catch (UserDefinedAge e) {
+			System.out.println(e.getMessage());
+		}
+		finally {
+			sc.close();
+		}
+
+	}
+
+}
