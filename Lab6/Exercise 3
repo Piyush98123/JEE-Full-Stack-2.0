@@ -1,0 +1,28 @@
+//Create a method which accepts an array of numbers and returns the numbers and their squares in Hashmap
+package LabbookL_6;
+import java.util.*;
+public class Square {
+	public HashMap<Integer,Integer> getSquare( int arr[]){
+		HashMap<Integer,Integer> hm=new HashMap<>();
+		for(int i=0;i<arr.length;i++) {
+			hm.put(arr[i],arr[i]*arr[i]);
+		}
+		return hm;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int size=sc.nextInt();
+		int arr[]=new int[size];
+		System.out.println("Enter the element of array");
+		for(int i=0;i<size;i++) {
+			arr[i]=sc.nextInt();
+		}
+		Square sq=new Square();
+		HashMap<Integer,Integer>hm=sq.getSquare(arr);
+		System.out.println(hm);
+
+	}
+
+}
