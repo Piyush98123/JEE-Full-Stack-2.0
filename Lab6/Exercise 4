@@ -1,0 +1,49 @@
+
+package LabbookL_6;
+import java.util.*;
+public class Medal {
+	public HashMap<Integer,String> getMedal(HashMap<Integer,Integer> hm)
+	{
+		HashMap<Integer,String> medal=new HashMap<>();
+		for(int i : hm.keySet()) 
+		{
+			int value=hm.get(i);
+			if(value>=90) 
+			{
+				medal.put(i,"Gold");
+			}
+			else if(value>=80 && value<90) 
+			{
+				medal.put(i,"Silver");
+			}
+			else if(value>=70 && value<80) 
+			{
+				medal.put(i, "Bronze");
+			}
+			
+		}
+		
+		return medal;
+	}
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		HashMap<Integer,Integer>hm=new HashMap<>();
+		System.out.println("Enter the number of students");
+		int number=sc.nextInt();
+		for(int i=0;i<number;i++) 
+		{
+			System.out.println("Enter the registration number");
+			int reg=sc.nextInt();
+			System.out.println("Enter the marks");
+			int mark=sc.nextInt();
+			hm.put(reg, mark);	
+		}
+		Medal medal=new Medal();
+		HashMap<Integer,String> result=medal.getMedal(hm);
+		System.out.println(result);
+		
+	}
+
+}
