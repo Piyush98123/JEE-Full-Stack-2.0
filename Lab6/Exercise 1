@@ -1,0 +1,35 @@
+/*Exercise 1: Create a method which accepts a hash map and return the values of the map in sorted order as a List 
+*/
+
+package LabbookL_6;
+import java.util.*;
+public class SortedHashMap {
+	public ArrayList<Integer> modifyHashMap(HashMap<String,Integer> hm){
+		ArrayList<Integer> list=new ArrayList<>();
+		for(int i: hm.values()) {
+			list.add(i);
+		}
+		Collections.sort(list);
+		return list;
+	}
+
+	public static void main(String[] args) {
+		HashMap<String,Integer>hm=new HashMap<>();
+		SortedHashMap shm=new SortedHashMap();
+		hm.put("Arun", 1);
+		hm.put("Sohan", 2);
+		hm.put("Mohit",5);
+		hm.put("Nishant",3);
+		hm.put("Rajan", 8);
+		System.out.println("Hasmap before Sorting");
+		System.out.println(hm);
+		ArrayList <Integer>al=shm.modifyHashMap(hm);
+		System.out.println("After Sorting");
+		Iterator itr=al.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+	}
+
+}
